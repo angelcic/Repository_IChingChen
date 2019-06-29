@@ -117,8 +117,17 @@ enum Gasoline: String {
     case oil98 = "98"
     case diesel = "diesel"
     
-    func getPrice(of type: Gasoline) -> Int {
-        switch type {
+//    func getPrice(of type: Gasoline) -> Int {
+//        switch type {
+//        case .oil92: return 10
+//        case .oil95: return 10
+//        case .oil98: return 10
+//        case .diesel: return 10
+//        }
+//
+//    }
+    func getPrice() -> Int {
+        switch self { //使用的是本身的屬性，可以不用再傳入參數直接用self
         case .oil92: return 10
         case .oil95: return 10
         case .oil98: return 10
@@ -128,6 +137,8 @@ enum Gasoline: String {
     }
 }
 
+
+print(Gasoline.oil92.getPrice())
 //●Please explain what is enum ​associate value​ and how it works
 
 //列舉中的每個 case 成員值，可以儲存一個或以上其他型別的相關值(associated value)，每個成員的相關值可以不一樣。
