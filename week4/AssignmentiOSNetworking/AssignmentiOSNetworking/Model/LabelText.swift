@@ -8,9 +8,11 @@
 
 import Foundation
 
-struct UIText: Codable {
+struct LabelText: Codable {
     let stationID: String
     let stationName: String
     let stationAddress: String
+    
+    
 }
 

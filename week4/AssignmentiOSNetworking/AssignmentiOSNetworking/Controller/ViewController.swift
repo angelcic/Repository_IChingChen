@@ -32,33 +32,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        urlRequest()
+
+        LabelTextAPI.requestLabelText(completionHandler: hanleLabelTextResponse(labeltext:error:))
     }
     
-    func urlRequest() {
-        guard let url = URL(string: url) else {
-            print("Cannot create URL")
-            return
+    func hanleLabelTextResponse(labeltext: LabelText?, error: Error?) {
+        DispatchQueue.main.async {
+            self.setUIText(stationID: labeltext?.stationID , stationName: labeltext?.stationName, stationAddress: labeltext?.stationAddress)
         }
-        let task = URLSession.shared.dataTask(with: url) {
-            (data, responds, error) in
-            guard let data = data else {
-                print("no data, orthere was an error")
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            let uiTextData = try! decoder.decode(UIText.self,from: data)
-            
-            //更新UI Text
-            DispatchQueue.main.async {
-                self.setUIText(stationID: uiTextData.stationID , stationName: uiTextData.stationName, stationAddress: uiTextData.stationAddress)
-            }
-            
-        }
-        task.resume()
-        
-    }
+    }    
 
     func setUIText(stationID: String?, stationName: String?, stationAddress: String?) {
         stationIDLabel.text = stationID
