@@ -12,7 +12,8 @@
 		91B8064622D08774007B2CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B8064422D08774007B2CFD /* Main.storyboard */; };
 		91B8064822D08775007B2CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B8064722D08775007B2CFD /* Assets.xcassets */; };
 		91B8064B22D08775007B2CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B8064922D08775007B2CFD /* LaunchScreen.storyboard */; };
-		91B8067C22D0B730007B2CFD /* UIText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B8067B22D0B730007B2CFD /* UIText.swift */; };
+		91B8067C22D0B730007B2CFD /* LabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B8067B22D0B730007B2CFD /* LabelText.swift */; };
+		91B8068122D1B3D2007B2CFD /* LabelTextAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B8068022D1B3D2007B2CFD /* LabelTextAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		91B8064722D08775007B2CFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91B8064A22D08775007B2CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91B8064C22D08775007B2CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91B8067B22D0B730007B2CFD /* UIText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIText.swift; sourceTree = "<group>"; };
+		91B8067B22D0B730007B2CFD /* LabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelText.swift; sourceTree = "<group>"; };
+		91B8068022D1B3D2007B2CFD /* LabelTextAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,8 @@
 		91B8067A22D0B6F3007B2CFD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				91B8067B22D0B730007B2CFD /* UIText.swift */,
+				91B8067B22D0B730007B2CFD /* LabelText.swift */,
+				91B8068022D1B3D2007B2CFD /* LabelTextAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,8 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B8068122D1B3D2007B2CFD /* LabelTextAPI.swift in Sources */,
 				91B8064322D08774007B2CFD /* ViewController.swift in Sources */,
-				91B8067C22D0B730007B2CFD /* UIText.swift in Sources */,
+				91B8067C22D0B730007B2CFD /* LabelText.swift in Sources */,
 				91B8064122D08774007B2CFD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
