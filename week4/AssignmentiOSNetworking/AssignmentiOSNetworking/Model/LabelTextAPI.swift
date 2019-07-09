@@ -12,13 +12,18 @@ class LabelTextAPI {
     enum Endpoint: String {
         case textURL = "https://stations-98a59.firebaseio.com/practice.json"
         
-        var url: URL {
-            return URL(string: self.rawValue)!
+        var url: URL? {
+            return URL(string: self.rawValue)
         }
     }
     
     class func requestLabelText(completionHandler: @escaping (LabelText?, Error?) -> Void) {
-        let url = Endpoint.textURL.url
+        
+        
+        guard let url = Endpoint.textURL.url else {
+            completionHandler(nil, getLabelTextError.urlError)
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: url){
             (data, responds, error) in
@@ -28,12 +33,19 @@ class LabelTextAPI {
             }
             
             let decoder = JSONDecoder()
-            let uiTextData = try! decoder.decode(LabelText.self,from: data)
-            
-            completionHandler(uiTextData, nil)
+            do {
+                let uiTextData = try decoder.decode(LabelText.self, from: data)
+                completionHandler(uiTextData, nil)
+            } catch let error{
+                completionHandler(nil, error)
+            }
             
         }
         task.resume()
     }
     
+}
+
+enum getLabelTextError: Error {
+    case urlError
 }
