@@ -46,7 +46,7 @@ enum SongRequest: Request {
         
         switch self {
             
-        case .newHits: return "/v1.1/new-hits-playlists?territory=TW HTTP/1.1"
+        case .newHits: return "/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks?territory=TW&limit=20"
             
         }
         
@@ -107,10 +107,10 @@ extension Request {
     func makeRequest() -> URLRequest {
         
         let urlString = Bundle.main.infoDictionary!["KKBOXBaseURL"] as! String + endPoint
-        
+        print(urlString)
 //        let KKBoxToken = Bundle.main.infoDictionary!["xLlSfIg0COXxDhtfBc+U9g=="] as! String
         
-        let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+        let url = URL(string: urlString)!
         
         var request = URLRequest(url: url)
         

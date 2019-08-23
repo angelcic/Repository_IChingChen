@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F224BC3A29E274C414F35A5 /* Pods_KKBOXAPIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED712972A1ABA3D709FAD8C /* Pods_KKBOXAPIDemo.framework */; };
 		91A6703D230F76170034EE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6703C230F76170034EE67 /* AppDelegate.swift */; };
 		91A6703F230F76170034EE67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6703E230F76170034EE67 /* ViewController.swift */; };
 		91A67042230F76170034EE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A67040230F76170034EE67 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6ED712972A1ABA3D709FAD8C /* Pods_KKBOXAPIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKBOXAPIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A67039230F76170034EE67 /* KKBOXAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKBOXAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A6703C230F76170034EE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91A6703E230F76170034EE67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		91A6705A230F8C3B0034EE67 /* KKBOXAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXAPIManager.swift; sourceTree = "<group>"; };
 		91A6705E230F92590034EE67 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
 		91A67060230F94BB0034EE67 /* SongObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongObject.swift; sourceTree = "<group>"; };
+		BBB66A524926D672FF0E17AB /* Pods-KKBOXAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXAPIDemo.release.xcconfig"; path = "Target Support Files/Pods-KKBOXAPIDemo/Pods-KKBOXAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
+		ED6AEB989488505D7240929B /* Pods-KKBOXAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXAPIDemo.debug.xcconfig"; path = "Target Support Files/Pods-KKBOXAPIDemo/Pods-KKBOXAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F224BC3A29E274C414F35A5 /* Pods_KKBOXAPIDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		129071AC4087248F40E4AD0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6ED712972A1ABA3D709FAD8C /* Pods_KKBOXAPIDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		91A67030230F76170034EE67 = {
 			isa = PBXGroup;
 			children = (
 				91A6703B230F76170034EE67 /* KKBOXAPIDemo */,
 				91A6703A230F76170034EE67 /* Products */,
+				F0E8B905F89FC1892B0F8ECC /* Pods */,
+				129071AC4087248F40E4AD0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +137,16 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		F0E8B905F89FC1892B0F8ECC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED6AEB989488505D7240929B /* Pods-KKBOXAPIDemo.debug.xcconfig */,
+				BBB66A524926D672FF0E17AB /* Pods-KKBOXAPIDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91A6704E230F76180034EE67 /* Build configuration list for PBXNativeTarget "KKBOXAPIDemo" */;
 			buildPhases = (
+				75FD2888F9AEE771182C5EE4 /* [CP] Check Pods Manifest.lock */,
 				91A67035230F76170034EE67 /* Sources */,
 				91A67036230F76170034EE67 /* Frameworks */,
 				91A67037230F76170034EE67 /* Resources */,
+				0C4A84A76D66F07123D23A51 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +215,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C4A84A76D66F07123D23A51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKBOXAPIDemo/Pods-KKBOXAPIDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKBOXAPIDemo/Pods-KKBOXAPIDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKBOXAPIDemo/Pods-KKBOXAPIDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75FD2888F9AEE771182C5EE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKBOXAPIDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		91A67035230F76170034EE67 /* Sources */ = {
@@ -344,6 +413,7 @@
 		};
 		91A6704F230F76180034EE67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED6AEB989488505D7240929B /* Pods-KKBOXAPIDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -361,6 +431,7 @@
 		};
 		91A67050230F76180034EE67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBB66A524926D672FF0E17AB /* Pods-KKBOXAPIDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

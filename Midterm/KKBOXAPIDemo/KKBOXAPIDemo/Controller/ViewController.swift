@@ -20,8 +20,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var headerImageView: UIImageView!
     
     let manager = KKBOXAPIManager.manager
+    var songList: [SongData] = []
+
+    var isFetching = false
     
-    var isLike: [IndexPath: Bool] = [:]    
+    var favoriteSongList: [IndexPath: Bool] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,19 +36,35 @@ class ViewController: UIViewController {
         self.tableView.register(nib, forCellReuseIdentifier: "SongTableViewCell")
         
         fetchNewHits()
+        
     }
     
     func fetchNewHits() {
+        isFetching = true
         manager.fetchNewHits(){[weak self] result, error in
+            self?.isFetching = false
             if result {
-                self?.tableView.reloadData()
+                self?.songList = KKBOXAPIManager.manager.songList
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }                
             }
         }
 
     }
     
     func fetchMoreNewHits() {
-        
+        print("====預載更多資料......")
+        isFetching = true
+        manager.fetchMoreNewHits() {[weak self] result, error in
+            self?.isFetching = false
+            if result {
+                self?.songList = KKBOXAPIManager.manager.songList
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
     }
     
     // tableHeaderView 加入 image
@@ -60,7 +79,17 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        print("點擊了：\(indexPath.row)")
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if isFetching {
+            return
+        }
+        // 滑動 tableView 時預載下一頁資料
+        if (indexPath.row > Int(self.songList.count / 10 * 8 )) {
+            fetchMoreNewHits()
+        }
     }
 }
 
@@ -77,18 +106,45 @@ extension ViewController: UITableViewDataSource {
         }
         
         cell.delegate = self
+        
         // TODO:
-        
-        
-        return cell
+        if songList.count >= indexPath.row {
+            cell.setTitle(title: songList[indexPath.row].album.name)
+            cell.setImage(imageUrl: songList[indexPath.row].album.images[0].url)
+            if let status = favoriteSongList[indexPath] {
+                cell.setLikeButton(islike: status)
+            } else {
+                cell.setLikeButton(islike: false)
+            }
+            return cell
+        } else {
+            return cell
+        }
     }
     
 }
 
+// 喜愛歌曲點擊狀態改變
 extension ViewController: SongCellDelegate {
-    func likeAction(cell: UITableViewCell) {
-        guard let index = tableView.indexPath(for: cell) else { return }
-        // TODO:
+    func likeAction(cell: SongTableViewCell) {
+        
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        guard
+            var status = favoriteSongList[indexPath]
+        else {
+            favoriteSongList[indexPath] = true
+            cell.setLikeButton(islike: true)
+            tableView.reloadRows(at: [indexPath], with: .none)
+            return
+        }
+        if status {
+            status = false
+        } else {
+            status = true
+        }
+        cell.setLikeButton(islike: status)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
 }

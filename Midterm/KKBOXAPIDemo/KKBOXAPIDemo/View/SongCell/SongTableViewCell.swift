@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SongTableViewCell: UITableViewCell {
 
@@ -24,8 +25,31 @@ class SongTableViewCell: UITableViewCell {
         likeButton.addTarget(self, action: #selector(likeAction), for: .touchUpInside)
     }
     
+    func setTitle(title: String) {
+        songTitleLabel.text = title
+    }
+    
+    func setImage(imageUrl: String) {
+        guard let url = URL(string: imageUrl) else {return}
+        songImageView.kf.setImage(with: url)
+    }
+    
+    func setLikeButton(islike: Bool) {
+        if islike {
+            likeButton.setImage(UIImage(named: "icons8-fill-heart-50"), for: .normal)
+        } else {
+            likeButton.setImage(UIImage(named: "icons8-heart-50"), for: .normal)
+        }
+    }
+    
     func setupCell(imageUrl: URL, title: String, islike: Bool) {
-        
+        songImageView.kf.setImage(with: imageUrl)
+        songTitleLabel.text = title
+        if islike {
+            likeButton.setImage(UIImage(named: "icons8-fill-heart-50"), for: .normal)
+        } else {
+            likeButton.setImage(UIImage(named: "icons8-heart-50"), for: .normal)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,5 +65,5 @@ class SongTableViewCell: UITableViewCell {
 }
 
 protocol SongCellDelegate: AnyObject {
-    func likeAction(cell: UITableViewCell)
+    func likeAction(cell: SongTableViewCell)
 }

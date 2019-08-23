@@ -16,11 +16,17 @@ class KKBOXAPIManager {
     var songList: [SongData] = []
     var songObject: SongObject?
     var nextPage: String?
-    let KKBoxToken = Bundle.main.infoDictionary!["xLlSfIg0COXxDhtfBc+U9g=="] as! String
+    let KKBoxToken = Bundle.main.infoDictionary!["KKBOXAccessToken"] as! String
     
     func fetchNewHits(resultHandler: @escaping (Bool, Error?) -> Void) {
-        
-        httpRequest(request: SongRequest.newHits(KKBoxToken)) {[weak self] result in
+        guard
+            let url = URL(string: "https://api.kkbox.com/v1.1/new-hits-playlists/DZrC8m29ciOFY2JAm3/tracks?territory=TW&limit=20")
+            else { return }
+        var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = ["Authorization": "Bearer xLlSfIg0COXxDhtfBc+U9g=="]
+        request.httpMethod = "GET"
+        httpRequest(request: request) {[weak self] result in
+//        httpRequest(request: SongRequest.newHits(KKBoxToken)) {[weak self] result in
             switch result {
             case .success(let data):
                 
@@ -54,8 +60,12 @@ class KKBOXAPIManager {
         guard
             let nextPage = nextPage,
             let url = URL(string: nextPage)
-        else { return }
+        else {
+            print("沒有更多資料了！！")
+            return
+        }
         var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = ["Authorization": "Bearer xLlSfIg0COXxDhtfBc+U9g=="]
         request.httpMethod = "GET"
         
             httpRequest(request: request) {[weak self] result in
@@ -104,7 +114,7 @@ class KKBOXAPIManager {
                 
                 guard error == nil else {
                     
-                    return completion(Result.failure(error!))
+                     return completion(Result.failure(error!))
                 }
                 
                 let httpResponse = response as! HTTPURLResponse
