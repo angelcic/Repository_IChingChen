@@ -30,9 +30,6 @@ class KKBOXAPIManager {
                 do {
                     let songObject = try decoder.decode(SongObject.self, from: data)
                     
-                    print("下載 \(songObject.data.count) 筆資料 ")
-                    print("共有 \(songObject.summary.total) 筆資料")
-                    
                     self?.songObject = songObject
                     self?.songList += songObject.data
                     self?.nextPage = songObject.paging.next
@@ -55,7 +52,7 @@ class KKBOXAPIManager {
             let nextPage = nextPage,
             let url = URL(string: nextPage)
             else {
-                print("沒有更多資料了！！")
+                resultHandler(false, FetchError.noMorePage)
                 return
         }
         // 用 KKBOX 提供的下一頁 url 來要資料
@@ -92,6 +89,10 @@ class KKBOXAPIManager {
                 resultHandler(false, error)
             }
         }
+    }
+    
+    enum FetchError: Error {
+        case noMorePage
     }
     
     func httpRequest(request: Request,

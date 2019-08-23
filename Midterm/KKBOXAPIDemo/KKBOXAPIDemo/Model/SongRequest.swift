@@ -99,7 +99,6 @@ extension Request {
     func makeRequest() -> URLRequest {
         
         let urlString = Bundle.main.infoDictionary!["KKBOXBaseURL"] as! String + endPoint
-        print(urlString)
         
         let url = URL(string: urlString)!
         

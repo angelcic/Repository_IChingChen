@@ -18,32 +18,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAu-Ll-X79">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAu-Ll-X79" customClass="SongListView" customModule="KKBOXAPIDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K4y-oW-Qec">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="pLw-xZ-eF5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="K4y-oW-Qec" firstAttribute="leading" secondItem="xAu-Ll-X79" secondAttribute="leading" id="DjC-r6-j3t"/>
+                                    <constraint firstAttribute="bottom" secondItem="K4y-oW-Qec" secondAttribute="bottom" id="HcK-gA-7SE"/>
+                                    <constraint firstAttribute="trailing" secondItem="K4y-oW-Qec" secondAttribute="trailing" id="dkq-QS-rMJ"/>
+                                    <constraint firstItem="K4y-oW-Qec" firstAttribute="top" secondItem="xAu-Ll-X79" secondAttribute="top" id="fko-Bz-kOz"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="headerImageView" destination="pLw-xZ-eF5" id="yhl-3z-6wV"/>
+                                    <outlet property="tableView" destination="K4y-oW-Qec" id="h3N-83-6yZ"/>
+                                </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K4y-oW-Qec">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="pLw-xZ-eF5">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K4y-oW-Qec" secondAttribute="bottom" id="4xW-7R-f9y"/>
-                            <constraint firstItem="K4y-oW-Qec" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8zt-1G-iL5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K4y-oW-Qec" secondAttribute="trailing" id="T9G-oR-4g8"/>
-                            <constraint firstItem="K4y-oW-Qec" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b9G-23-acP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xAu-Ll-X79" secondAttribute="trailing" id="378-rh-shJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xAu-Ll-X79" secondAttribute="bottom" id="Adn-RE-GaE"/>
+                            <constraint firstItem="xAu-Ll-X79" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DRx-NX-Oqf"/>
+                            <constraint firstItem="xAu-Ll-X79" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wgq-es-HxV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="headerImageView" destination="pLw-xZ-eF5" id="6en-W2-9SK"/>
-                        <outlet property="tableView" destination="K4y-oW-Qec" id="Mx7-hH-V79"/>
+                        <outlet property="songListView" destination="xAu-Ll-X79" id="SIE-72-MEk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

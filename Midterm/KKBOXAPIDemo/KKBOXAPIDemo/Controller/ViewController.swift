@@ -10,33 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet weak var songListView: SongListView! {
         didSet {
-            tableView.delegate = self
-            tableView.dataSource =  self
+            songListView.delegate = self
         }
     }
-    
-    @IBOutlet weak var headerImageView: UIImageView!
     
     let manager = KKBOXAPIManager.manager
     var songList: [SongData] = []
 
     var isFetching = false
+    var noMorePage = false
     
     var favoriteSongList: [IndexPath: Bool] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        adjustTableHeaderView()
-        
-        let nib = UINib(nibName: "SongTableViewCell", bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: "SongTableViewCell")
         
         fetchNewHits()
-        
     }
     
     func fetchNewHits() {
@@ -46,37 +37,33 @@ class ViewController: UIViewController {
             if result {
                 self?.songList = KKBOXAPIManager.manager.songList
                 DispatchQueue.main.async {
-                    self?.tableView.reloadData()
+                    self?.songListView.reloadData()
                 }                
             }
         }
 
     }
     
+    // 下載下一頁的資料
     func fetchMoreNewHits() {
-        print("====預載更多資料......")
         isFetching = true
         manager.fetchMoreNewHits() {[weak self] result, error in
             self?.isFetching = false
             if result {
                 self?.songList = KKBOXAPIManager.manager.songList
                 DispatchQueue.main.async {
-                    self?.tableView.reloadDataSmoothly()                    
+                    self?.songListView.reloadData()
                 }
             } else {
-                print(error)
+                print(error ?? "failed")
+                guard let error = error as? KKBOXAPIManager.FetchError else {return}
+                if error == KKBOXAPIManager.FetchError.noMorePage {
+                    self?.noMorePage = true
+                }
             }
         }
     }
     
-    // tableHeaderView 加入 image
-    func adjustTableHeaderView() {
-        headerImageView.image = UIImage(named: "600x600")
-        let screenWidth = UIScreen.main.bounds.width
-        headerImageView.frame.size = CGSize(width: screenWidth, height: screenWidth)
-        headerImageView.clipsToBounds = true
-        headerImageView.contentMode = UIView.ContentMode.scaleAspectFill
-    }
 }
 
 extension ViewController: UITableViewDelegate {
@@ -86,17 +73,18 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        // 最後一次加載資料因為沒有更多資料要加載，所以會直接 return，
-//        isFetching 會一直是 true，所以不會再進到預載方法。但一直是true 邏輯上感覺好像怪怪的......
-        if isFetching {
+        if isFetching || noMorePage {
             return
         }
-        // 滑動 tableView 時預載下一頁資料
+        // 滑動 tableView 時若達目前可顯示筆數的 80% 預載下一頁資料
         if (indexPath.row > Int(self.songList.count / 10 * 8 )) {
-            print(indexPath.row)
             fetchMoreNewHits()
         }
     }
+}
+
+extension ViewController: SongListViewDelegate {
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -133,15 +121,15 @@ extension ViewController: UITableViewDataSource {
 // 喜愛歌曲點擊狀態改變
 extension ViewController: SongCellDelegate {
     func likeAction(cell: SongTableViewCell) {
-        
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        
+
+        guard let indexPath = songListView.tableView.indexPath(for: cell) else { return }
+
         guard
             var status = favoriteSongList[indexPath]
         else {
             favoriteSongList[indexPath] = true
             cell.setLikeButton(islike: true)
-            tableView.reloadRows(at: [indexPath], with: .none)
+            songListView.tableView.reloadRows(at: [indexPath], with: .none)
             return
         }
         if status {
@@ -150,7 +138,7 @@ extension ViewController: SongCellDelegate {
             status = true
         }
         cell.setLikeButton(islike: status)
-        tableView.reloadRows(at: [indexPath], with: .none)
+        songListView.tableView.reloadRows(at: [indexPath], with: .none)
     }
-    
+
 }
