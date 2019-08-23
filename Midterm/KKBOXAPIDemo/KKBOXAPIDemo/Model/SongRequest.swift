@@ -80,15 +80,7 @@ enum HTTPMethod: String {
 }
 
 enum HTTPHeaderField: String {
-    
-    case contentType = "Content-Type"
-    
     case auth = "Authorization"
-}
-
-enum HTTPHeaderValue: String {
-    
-    case json = "application/json"
 }
 
 protocol Request {
@@ -108,7 +100,6 @@ extension Request {
         
         let urlString = Bundle.main.infoDictionary!["KKBOXBaseURL"] as! String + endPoint
         print(urlString)
-//        let KKBoxToken = Bundle.main.infoDictionary!["xLlSfIg0COXxDhtfBc+U9g=="] as! String
         
         let url = URL(string: urlString)!
         

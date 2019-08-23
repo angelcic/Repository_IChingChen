@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		91A6705B230F8C3B0034EE67 /* KKBOXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6705A230F8C3B0034EE67 /* KKBOXAPIManager.swift */; };
 		91A6705F230F92590034EE67 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6705E230F92590034EE67 /* SongRequest.swift */; };
 		91A67061230F94BB0034EE67 /* SongObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A67060230F94BB0034EE67 /* SongObject.swift */; };
+		91A67064230FD8EB0034EE67 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A67063230FD8EB0034EE67 /* UITableViewExtension.swift */; };
+		91A67066230FDF150034EE67 /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A67065230FDF150034EE67 /* SongListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		91A6705A230F8C3B0034EE67 /* KKBOXAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXAPIManager.swift; sourceTree = "<group>"; };
 		91A6705E230F92590034EE67 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
 		91A67060230F94BB0034EE67 /* SongObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongObject.swift; sourceTree = "<group>"; };
+		91A67063230FD8EB0034EE67 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		91A67065230FDF150034EE67 /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
 		BBB66A524926D672FF0E17AB /* Pods-KKBOXAPIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXAPIDemo.release.xcconfig"; path = "Target Support Files/Pods-KKBOXAPIDemo/Pods-KKBOXAPIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		ED6AEB989488505D7240929B /* Pods-KKBOXAPIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXAPIDemo.debug.xcconfig"; path = "Target Support Files/Pods-KKBOXAPIDemo/Pods-KKBOXAPIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +85,7 @@
 		91A6703B230F76170034EE67 /* KKBOXAPIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				91A67062230FD8C30034EE67 /* Extension */,
 				91A6703C230F76170034EE67 /* AppDelegate.swift */,
 				91A6705C230F8C490034EE67 /* Model */,
 				91A67052230F7B720034EE67 /* Controller */,
@@ -95,9 +100,9 @@
 		91A67051230F77AA0034EE67 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				91A67059230F81C80034EE67 /* SongCell */,
 				91A67040230F76170034EE67 /* Main.storyboard */,
 				91A67048230F76180034EE67 /* LaunchScreen.storyboard */,
+				91A67067230FDF1F0034EE67 /* SongListView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -137,13 +142,29 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		91A67062230FD8C30034EE67 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				91A67063230FD8EB0034EE67 /* UITableViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		91A67067230FDF1F0034EE67 /* SongListView */ = {
+			isa = PBXGroup;
+			children = (
+				91A67059230F81C80034EE67 /* SongCell */,
+				91A67065230FDF150034EE67 /* SongListView.swift */,
+			);
+			path = SongListView;
+			sourceTree = "<group>";
+		};
 		F0E8B905F89FC1892B0F8ECC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				ED6AEB989488505D7240929B /* Pods-KKBOXAPIDemo.debug.xcconfig */,
 				BBB66A524926D672FF0E17AB /* Pods-KKBOXAPIDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -266,9 +287,11 @@
 				91A6705B230F8C3B0034EE67 /* KKBOXAPIManager.swift in Sources */,
 				91A67057230F81BE0034EE67 /* SongTableViewCell.swift in Sources */,
 				91A6705F230F92590034EE67 /* SongRequest.swift in Sources */,
+				91A67064230FD8EB0034EE67 /* UITableViewExtension.swift in Sources */,
 				91A6703F230F76170034EE67 /* ViewController.swift in Sources */,
 				91A67061230F94BB0034EE67 /* SongObject.swift in Sources */,
 				91A67045230F76170034EE67 /* KKBOXAPIDemo.xcdatamodeld in Sources */,
+				91A67066230FDF150034EE67 /* SongListView.swift in Sources */,
 				91A6703D230F76170034EE67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

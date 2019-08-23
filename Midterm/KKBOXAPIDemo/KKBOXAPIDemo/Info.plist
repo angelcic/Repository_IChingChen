@@ -42,7 +42,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>KKBOXBaseURL</key>
-	<string>api.kkbox.com</string>
+	<string>https://api.kkbox.com</string>
 	<key>KKBOXAccessToken</key>
 	<string>xLlSfIg0COXxDhtfBc+U9g==</string>
 </dict>

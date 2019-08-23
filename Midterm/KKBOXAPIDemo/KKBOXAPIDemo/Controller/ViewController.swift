@@ -61,8 +61,10 @@ class ViewController: UIViewController {
             if result {
                 self?.songList = KKBOXAPIManager.manager.songList
                 DispatchQueue.main.async {
-                    self?.tableView.reloadData()
+                    self?.tableView.reloadDataSmoothly()                    
                 }
+            } else {
+                print(error)
             }
         }
     }
@@ -83,11 +85,15 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        // 最後一次加載資料因為沒有更多資料要加載，所以會直接 return，
+//        isFetching 會一直是 true，所以不會再進到預載方法。但一直是true 邏輯上感覺好像怪怪的......
         if isFetching {
             return
         }
         // 滑動 tableView 時預載下一頁資料
         if (indexPath.row > Int(self.songList.count / 10 * 8 )) {
+            print(indexPath.row)
             fetchMoreNewHits()
         }
     }
