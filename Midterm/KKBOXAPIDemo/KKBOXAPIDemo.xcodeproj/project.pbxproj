@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91A6703D230F76170034EE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6703C230F76170034EE67 /* AppDelegate.swift */; };
+		91A6703F230F76170034EE67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6703E230F76170034EE67 /* ViewController.swift */; };
+		91A67042230F76170034EE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A67040230F76170034EE67 /* Main.storyboard */; };
+		91A67045230F76170034EE67 /* KKBOXAPIDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91A67043230F76170034EE67 /* KKBOXAPIDemo.xcdatamodeld */; };
+		91A67047230F76180034EE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A67046230F76180034EE67 /* Assets.xcassets */; };
+		91A6704A230F76180034EE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A67048230F76180034EE67 /* LaunchScreen.storyboard */; };
+		91A67057230F81BE0034EE67 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A67055230F81BE0034EE67 /* SongTableViewCell.swift */; };
+		91A67058230F81BE0034EE67 /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A67056230F81BE0034EE67 /* SongTableViewCell.xib */; };
+		91A6705B230F8C3B0034EE67 /* KKBOXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6705A230F8C3B0034EE67 /* KKBOXAPIManager.swift */; };
+		91A6705F230F92590034EE67 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A6705E230F92590034EE67 /* SongRequest.swift */; };
+		91A67061230F94BB0034EE67 /* SongObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A67060230F94BB0034EE67 /* SongObject.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		91A67039230F76170034EE67 /* KKBOXAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKBOXAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A6703C230F76170034EE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		91A6703E230F76170034EE67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		91A67041230F76170034EE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91A67044230F76170034EE67 /* KKBOXAPIDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KKBOXAPIDemo.xcdatamodel; sourceTree = "<group>"; };
+		91A67046230F76180034EE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91A67049230F76180034EE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91A6704B230F76180034EE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A67055230F81BE0034EE67 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		91A67056230F81BE0034EE67 /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
+		91A6705A230F8C3B0034EE67 /* KKBOXAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXAPIManager.swift; sourceTree = "<group>"; };
+		91A6705E230F92590034EE67 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
+		91A67060230F94BB0034EE67 /* SongObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongObject.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91A67036230F76170034EE67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91A67030230F76170034EE67 = {
+			isa = PBXGroup;
+			children = (
+				91A6703B230F76170034EE67 /* KKBOXAPIDemo */,
+				91A6703A230F76170034EE67 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91A6703A230F76170034EE67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91A67039230F76170034EE67 /* KKBOXAPIDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91A6703B230F76170034EE67 /* KKBOXAPIDemo */ = {
+			isa = PBXGroup;
+			children = (
+				91A6703C230F76170034EE67 /* AppDelegate.swift */,
+				91A6705C230F8C490034EE67 /* Model */,
+				91A67052230F7B720034EE67 /* Controller */,
+				91A67051230F77AA0034EE67 /* View */,
+				91A6705D230F8C840034EE67 /* Resource */,
+				91A6704B230F76180034EE67 /* Info.plist */,
+				91A67043230F76170034EE67 /* KKBOXAPIDemo.xcdatamodeld */,
+			);
+			path = KKBOXAPIDemo;
+			sourceTree = "<group>";
+		};
+		91A67051230F77AA0034EE67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91A67059230F81C80034EE67 /* SongCell */,
+				91A67040230F76170034EE67 /* Main.storyboard */,
+				91A67048230F76180034EE67 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91A67052230F7B720034EE67 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				91A6703E230F76170034EE67 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		91A67059230F81C80034EE67 /* SongCell */ = {
+			isa = PBXGroup;
+			children = (
+				91A67055230F81BE0034EE67 /* SongTableViewCell.swift */,
+				91A67056230F81BE0034EE67 /* SongTableViewCell.xib */,
+			);
+			path = SongCell;
+			sourceTree = "<group>";
+		};
+		91A6705C230F8C490034EE67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91A6705A230F8C3B0034EE67 /* KKBOXAPIManager.swift */,
+				91A6705E230F92590034EE67 /* SongRequest.swift */,
+				91A67060230F94BB0034EE67 /* SongObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91A6705D230F8C840034EE67 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				91A67046230F76180034EE67 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91A67038230F76170034EE67 /* KKBOXAPIDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91A6704E230F76180034EE67 /* Build configuration list for PBXNativeTarget "KKBOXAPIDemo" */;
+			buildPhases = (
+				91A67035230F76170034EE67 /* Sources */,
+				91A67036230F76170034EE67 /* Frameworks */,
+				91A67037230F76170034EE67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKBOXAPIDemo;
+			productName = KKBOXAPIDemo;
+			productReference = 91A67039230F76170034EE67 /* KKBOXAPIDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91A67031230F76170034EE67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = ichingchen;
+				TargetAttributes = {
+					91A67038230F76170034EE67 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 91A67034230F76170034EE67 /* Build configuration list for PBXProject "KKBOXAPIDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91A67030230F76170034EE67;
+			productRefGroup = 91A6703A230F76170034EE67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91A67038230F76170034EE67 /* KKBOXAPIDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91A67037230F76170034EE67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91A67058230F81BE0034EE67 /* SongTableViewCell.xib in Resources */,
+				91A6704A230F76180034EE67 /* LaunchScreen.storyboard in Resources */,
+				91A67047230F76180034EE67 /* Assets.xcassets in Resources */,
+				91A67042230F76170034EE67 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91A67035230F76170034EE67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91A6705B230F8C3B0034EE67 /* KKBOXAPIManager.swift in Sources */,
+				91A67057230F81BE0034EE67 /* SongTableViewCell.swift in Sources */,
+				91A6705F230F92590034EE67 /* SongRequest.swift in Sources */,
+				91A6703F230F76170034EE67 /* ViewController.swift in Sources */,
+				91A67061230F94BB0034EE67 /* SongObject.swift in Sources */,
+				91A67045230F76170034EE67 /* KKBOXAPIDemo.xcdatamodeld in Sources */,
+				91A6703D230F76170034EE67 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		91A67040230F76170034EE67 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91A67041230F76170034EE67 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		91A67048230F76180034EE67 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91A67049230F76180034EE67 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91A6704C230F76180034EE67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		91A6704D230F76180034EE67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91A6704F230F76180034EE67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KKBOXAPIDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ichingChen.KKBOXAPIDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91A67050230F76180034EE67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KKBOXAPIDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ichingChen.KKBOXAPIDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91A67034230F76170034EE67 /* Build configuration list for PBXProject "KKBOXAPIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A6704C230F76180034EE67 /* Debug */,
+				91A6704D230F76180034EE67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91A6704E230F76180034EE67 /* Build configuration list for PBXNativeTarget "KKBOXAPIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A6704F230F76180034EE67 /* Debug */,
+				91A67050230F76180034EE67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		91A67043230F76170034EE67 /* KKBOXAPIDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91A67044230F76170034EE67 /* KKBOXAPIDemo.xcdatamodel */,
+			);
+			currentVersion = 91A67044230F76170034EE67 /* KKBOXAPIDemo.xcdatamodel */;
+			path = KKBOXAPIDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 91A67031230F76170034EE67 /* Project object */;
+}

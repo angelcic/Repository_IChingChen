@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     }
     
     func showNextVC(index: Int?, text: String) {
-        let nextVC =  AddCellPage()
+        let nextVC = AddCellPage()
         nextVC.delegate = self
         nextVC.currentIndex = index
         nextVC.currentText = text
