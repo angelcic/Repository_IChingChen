@@ -71,7 +71,7 @@ class KKBOXAPIManager {
                     let songObject = try decoder.decode(SongObject.self, from: data)
                     
                     print("下載 \(songObject.data.count) 筆資料 ")
-                    print("已下載 \(self?.songList.count) 筆資料 ")
+                    print("已下載 \(String(describing: self?.songList.count)) 筆資料 ")
                     print("共有 \(songObject.summary.total) 筆資料")
                     
                     self?.songObject = songObject

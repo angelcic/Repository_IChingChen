@@ -19,9 +19,10 @@ class ViewController: UIViewController {
     let manager = KKBOXAPIManager.manager
     var songList: [SongData] = []
 
-    var isFetching = false
-    var noMorePage = false
+    var isFetching = false // 是否正在下載資料
+    var noMorePage = false // 是否已經沒有更多資料
     
+    // 記錄使用者點擊喜歡按鈕
     var favoriteSongList: [IndexPath: Bool] = [:]
     
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
         fetchNewHits()
     }
     
+    // 第一次下載資料
     func fetchNewHits() {
         isFetching = true
         manager.fetchNewHits(){[weak self] result, error in
@@ -66,6 +68,10 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: SongListViewDelegate {
+    
+}
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("點擊了：\(indexPath.row)")
@@ -81,10 +87,6 @@ extension ViewController: UITableViewDelegate {
             fetchMoreNewHits()
         }
     }
-}
-
-extension ViewController: SongListViewDelegate {
-    
 }
 
 extension ViewController: UITableViewDataSource {
